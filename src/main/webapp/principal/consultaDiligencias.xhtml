@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="./../WEB-INF/plantillas/plantillaInicial.xhtml">
+
+            <ui:define name="content">
+
+                <h:form id="contenidoBuscar">
+
+                    <h1 style="color: #04B45F;text-align: center">Consulta de Diligencias</h1>
+
+                    <p:commandButton value="Nuevo" actionListener="#{navegar.direccionarNuevaDiligencia()}" oncomplete="limpiar" style="color: #04B45F" /> 
+                    <br/>
+                    <p:dataTable id="busquedaJuicio" value="#" var="itemEstudio"  widgetVar="empleadoTabla" filteredValue="" rows="15"
+                                 paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="10,15,20"
+                                 paginatorPosition="top" emptyMessage="No hay ningún registro con esa opción">
+
+                        <p:column headerText="No." style="width: 30px; text-align: center" sortBy="">
+                            <h:outputLabel value="" />
+                        </p:column>
+                        
+                        <p:column filterBy="" headerText="Tipo de Juicio" filterMatchMode="contains" style="text-align: center">
+                            <h:outputLabel value="" />
+                        </p:column>
+
+                        <p:column filterBy="" headerText="Número Juicio" filterMatchMode="contains" style="text-align: center">
+                            <h:outputText value="" />
+                        </p:column>
+
+                        <p:column id="botonesAccion" headerText="Opciones" filterMatchMode="accion" style="text-align: center">
+                            <p:commandButton id="ver" icon="fa fa-eye" action="#{diligenciasListar.verDiligencia(itemEstudio.juCodigo)}" style="color: #045491"/> 
+                            <p:tooltip id="toolTipFade9" for="ver" value="Ver" trackMouse="true"/>
+                        </p:column>
+                        
+                    </p:dataTable>
+
+                </h:form>
+                <!-- Script de estilos para el contenido fel formulario-->
+                <h:outputStylesheet library="css" name="buscar.css" />
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

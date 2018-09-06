@@ -1,0 +1,39 @@
+
+#contenido {
+    /*    padding-top: 20%;*/
+    width: 960px;
+
+    margin-left: 5.5%;
+    margin-right:5.5%;
+    border: 1px solid #04B45F;
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-bottom: 20px;
+    /*background: #EBF5FB;*/
+}
+
+
+/*estilos propios de primefaces*/
+/*
+.ui-selectonemenu {
+    
+    display: inline-block;
+    position: initial !important;
+    width: auto;
+    zoom: 1;
+    cursor: pointer;
+    padding-right: 2em;
+}
+.ui-selectonemenu-trigger {
+    visibility: hidden;
+     border-right: 0; 
+     border-top: 0; 
+     border-bottom: 0; 
+     cursor: pointer; 
+     width: 16px; 
+     height: 100%; 
+     position: absolute; 
+     right: 0; 
+     top: 0; 
+     padding: 0 3px; 
+}*/

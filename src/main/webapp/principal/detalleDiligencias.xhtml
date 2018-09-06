@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="./../WEB-INF/plantillas/plantillaInicial.xhtml">
+
+            <ui:define name="content">
+
+                <h:form id="contenidoBuscar">
+
+                    <h1 style="color: #04B45F;text-align: center">Detalle de Diligencias del Juicio</h1>
+
+                    <p:dataTable id="busquedaJuicio" value="#{detalleDiligencias.getLtsSeguimientos(detalleDiligencias.seguimiento.juCodigo)}" var="itemEstudio"  widgetVar="empleadoTabla" rows="15"
+                                 paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="10,15,20"
+                                 paginatorPosition="top" emptyMessage="No hay ningún registro con esa opción">
+
+                        <p:column headerText="No." style="width: 30px; text-align: center" sortBy="#{itemEstudio.seCodigo}">
+                            <h:outputLabel value="#{itemEstudio.seCodigo}" />
+                        </p:column>
+
+                        <p:column headerText="Funcionario" style="text-align: center">
+                            <h:outputLabel value="#{itemEstudio.fuCodigo.fuNombres} #{itemEstudio.fuCodigo.fuApellidos}" />
+                        </p:column>
+
+                        <p:column headerText="Descripción" style="text-align: center">
+                            <h:outputText value="#{itemEstudio.seDescripcion}" />
+                        </p:column>
+
+                        <p:column headerText="Fecha Diligencia" style="text-align: center">
+                            <h:outputText value="#{itemEstudio.seFechaDiligencia}" >
+                                <f:convertDateTime pattern="dd-MM-yyyy"/>
+                            </h:outputText>
+                        </p:column>
+
+                    </p:dataTable>
+
+                </h:form>
+                <!-- Script de estilos para el contenido fel formulario-->
+                <h:outputStylesheet library="css" name="buscar.css" />
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

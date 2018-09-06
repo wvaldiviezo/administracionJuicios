@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="./../WEB-INF/plantillas/plantillaInicial.xhtml">
+
+            <ui:define name="content">
+
+
+                <h:form id="contenidoBuscar">
+
+                    <h1 style="color: #04B45F;text-align: center">Actualización de la Información de un Juicio</h1>
+
+                    <p:growl id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true"/>
+
+                    <p:fieldset  legend="Información General" style="width:80%;margin-left: 9%; border-color: #04B45F" id="pg">
+                        <h:panelGrid columns="1" id="pgInfGen" style="color: #04B45F;">
+
+                            <h:outputLabel value="Tipo de Juicio: " style="margin-left:5%;"/>
+                            <p:selectOneMenu id="cboTipoAcc" value="#{actualizarJuicio.tipoAccionID}" filterMatchMode="startsWith" style="width:86%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
+                                <f:selectItems value="#{actualizarJuicio.ltsTipoAcciones}" var="tiposAcciones" itemLabel="#{tiposAcciones.taDescripcion}" itemValue="#{tiposAcciones.taCodigo}" />
+                            </p:selectOneMenu>
+                            <p:messages for="cboTipoAcc"/>                            
+
+                            <p:outputLabel value="Número de Juicio: " style="margin-left:5%;"/>
+                            <p:inputText id="txtNumJui" value="#{actualizarJuicio.juicioAct.juNumeroJuicio}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Campo requerido"/>
+                            <p:messages for="txtNumJui"/>                         
+                            
+                            <h:outputLabel value="Fecha de Inicio: " style="margin-left:5%;"/>
+                            <p:inputText id="txtFechaIni" value="#{actualizarJuicio.juicioAct.juFechaInicio}" style="color: #424949;text-transform:uppercase; width:90%;margin-left:5%;" required="true" requiredMessage="Campo requerido">
+                                <f:convertDateTime pattern="dd-MM-yyyy"/>
+                            </p:inputText>  
+                            <p:messages for="txtFechaIni"/>
+
+                            <!--Combo Zonal -->
+                            <h:outputLabel value="Zonal: " style="margin-left:5%;"/>
+                            <p:selectOneMenu id="cboZonal" immediate="true" value="#{actualizarJuicio.zonalID}" style="width:86%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
+                                <f:selectItems value="#{actualizarJuicio.ltsZonalOficina}" var="zonales" itemLabel="#{zonales.zoDescripcion}" itemValue="#{zonales.zoCodigo}" />
+                                <p:ajax update="cboOficina" onstart=""/>
+                            </p:selectOneMenu>
+                            <p:messages for="cboZonal"/>
+
+                            <!--Combo Oficina -->
+                            <h:outputLabel value="Oficina: " style="margin-left:5%;"/>
+                            <p:selectOneMenu id="cboOficina" immediate="true" value="#{actualizarJuicio.oficinaID}" style="width:86%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
+                                <f:selectItems value="#{actualizarJuicio.ltsOficinas}" var="oficinas" itemLabel="#{oficinas.ofDescripcion}" itemValue="#{oficinas.ofCodigo}" />
+                            </p:selectOneMenu>
+                            <p:messages for="cboOficina"/>
+
+                            <h:outputLabel value="Unidad Judicial: " style="margin-left:5%;"/>
+                            <p:inputText id="txtUnidadJudicial" value="#{actualizarJuicio.juicioAct.juUnidadJudicial}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:messages for="txtUnidadJudicial"/>
+                            
+                            <p:outputLabel value="Accionante: " style="margin-left:5%;"/>
+                            <p:inputText id="txtAccionante" value="#{actualizarJuicio.juicioAct.juOcacionante}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:messages for="txtAccionante"/>
+                            
+                            <p:outputLabel value="Accionado: " style="margin-left:5%;"/>
+                            <p:inputText id="txtAccionado" value="#{actualizarJuicio.juicioAct.juOcacionado}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:messages for="txtAccionado"/>
+                            
+                            <p:outputLabel value="Motivo de la Acción: " style="margin-left:5%;"/>
+                            <p:inputText id="txtMotAccion" value="#{actualizarJuicio.juicioAct.juMotivoAccion}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:messages for="txtMotAccion"/>
+                            
+                            <p:outputLabel value="Cuantía: " style="margin-left:5%;"/>
+                            <p:inputText id="txtCuantia" value="#{actualizarJuicio.juicioAct.juCuantia}" style="color: #424949; width:875px;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:messages for="txtCuantia"/>
+                            
+                            <h:outputLabel value="Nivel Riesgo: " style="margin-left:5%;"/>
+                            <p:selectOneMenu id="cboNRiesgo" value="#{actualizarJuicio.nivelRiesgoID}" style="width:86%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
+                                <f:selectItems value="#{actualizarJuicio.ltsNivelRiesgos}" var="riesgos" itemLabel="#{riesgos.nrDescripcion}" itemValue="#{riesgos.nrCodigo}" />
+                            </p:selectOneMenu> 
+                            <p:messages for="cboNRiesgo"/>
+
+                            <p:outputLabel value="Estado: " style="margin-left:5%;"/>
+                            <p:inputText id="estado" value="#{actualizarJuicio.juicioAct.juEstadoJuicio}" style="color: #424949;text-transform:uppercase; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:messages for="estado"/>
+                            <br/>
+
+                        </h:panelGrid>
+                    </p:fieldset>
+
+                    <br/>
+
+                    <h:panelGrid columns="2" style="margin-left: 35%">
+                        <p:commandButton icon="ui-icon-disk" id="btnGuardar" value="Guardar" action="#{actualizarJuicio.actualizarInformacion()}" actionListener="#{navegar.direccionarConsultaRJ()}" update=":contenidoBuscar, :contenidoBuscar:pgInfGen">
+                            <p:confirm header="Confirmación" message="Desea actualizar el juicio" icon="ui-icon-alert" />
+                            <!--                                <p:ajax update=":contenido:cboCargo ,:contenido:cboEspecialidad" ></p:ajax>-->
+                        </p:commandButton>
+                        <p:commandButton  icon="fa fa-fw fa-remove" value="Cancelar" update="contenidoBuscar" process="@this"  actionListener="#{navegar.direccionarConsultaRJ()}" >
+                            <p:confirm header="Confirmación" message="Desea cancelar la actualización del juicio." icon="ui-icon-alert" />
+                        </p:commandButton>
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </h:panelGrid>
+
+                </h:form>
+                <!-- Script de estilos para el contenido fel formulario-->
+                <h:outputStylesheet library="css" name="buscar.css" />
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

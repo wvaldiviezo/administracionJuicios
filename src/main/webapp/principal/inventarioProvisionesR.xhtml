@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <body>
+        <ui:composition template="./../WEB-INF/plantillas/plantillaInicial.xhtml">
+
+            <ui:define name="content">
+
+                <h:form id="contenido" style="text-align: center">
+                    <br/>
+                    <br/>
+                    <p:panelGrid id="panel2" style="margin-left: 10%; width: 80%;margin-right: 20%;">
+                        <h:graphicImage value="/resources/images/banner_cabecera1.png" style="width: 1540px; height: 70px"></h:graphicImage>
+                        <h2>BanEcuador</h2>
+                        <h3>Gerencia de Asesoría Jurídica</h3>
+                        <f:facet name="header">
+                            <p:row>
+                                <p:column colspan="8">Reporte de Insumo de Provisiones</p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column>No.</p:column>
+                                <p:column>Tipos de Juicios</p:column>
+                                <p:column>Nivel 1</p:column>
+                                <p:column>Nivel 2</p:column>
+                                <p:column>Nivel 3</p:column>
+                                <p:column>Nivel 4</p:column>
+
+                                <p:column>No Provisiona</p:column>
+                            </p:row>
+                        </f:facet>
+                        <p:row >
+                            <p:column>1</p:column>
+                            <p:column  style="text-align: left;">Acciones Constitucionales</p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosACN1}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosACN2}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosACN3}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosACN4}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosACN5}" />
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>2</p:column>
+                            <p:column  style="text-align: left;">Juicios Civiles</p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCiN1}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCiN2}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCiN3}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCiN4}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCiN5}" />
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>3</p:column>
+                            <p:column style="text-align: left;">Juicios Contenciosos</p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCoN1}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCoN2}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCoN3}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCoN4}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJCoN5}" />
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>4</p:column>
+                            <p:column style="text-align: left;">Juicios Laborales</p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJLaN1}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJLaN2}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJLaN3}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJLaN4}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJLaN5}" />
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>5</p:column>
+                            <p:column  style="text-align: left;">Juicios Penales</p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJPeN1}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJPeN2}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJPeN3}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJPeN4}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosJPeN5}" />
+                            </p:column>
+                        </p:row>
+                        <p:row>
+                            <p:column>6</p:column>
+                            <p:column style="text-align: left;">Trámites Especiales</p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosTEN1}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosTEN2}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosTEN3}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosTEN4}" />
+                            </p:column>
+                            <p:column>
+                                <h:outputLabel value="#{inventarioJuicios.ltsJuiciosTEN5}" />
+                            </p:column>
+                        </p:row>
+                        <f:facet name="footer">
+                            <p:row>
+                                <p:column colspan="2" style="text-align: center">Total</p:column> 
+                                <p:column style="text-align: center;">
+                                    <h:outputLabel value="#{inventarioJuicios.totales1}" />
+                                </p:column>
+                                <p:column style="text-align: center;">
+                                    <h:outputLabel value="#{inventarioJuicios.totales2}" />
+                                </p:column>
+                                <p:column style="text-align: center;">
+                                    <h:outputLabel value="#{inventarioJuicios.totales3}" />
+                                </p:column>
+                                <p:column style="text-align: center;">
+                                    <h:outputLabel value="#{inventarioJuicios.totales4}" />
+                                </p:column>
+                                <p:column style="text-align: center;">
+                                    <h:outputLabel value="#{inventarioJuicios.totales5}" />
+                                </p:column>
+                                
+                            </p:row>
+                        </f:facet>
+                    </p:panelGrid>
+                    <br/>                   
+                </h:form>
+                <h:form id="botones" style="text-align: center">
+                    <p:commandButton value="Imprimir" type="button" icon="fa fa-print">
+                        <p:printer target="contenido" />
+                    </p:commandButton>
+                </h:form> 
+                <br/> 
+                <br/> 
+                <br/> 
+                <br/> 
+                <br/> 
+                <br/>
+                <br/> 
+                <br/>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="./../WEB-INF/plantillas/plantillaInicial.xhtml">
+
+            <ui:define name="content">
+
+                <h:form id="contenidoBuscar">
+
+                    <h1 style="color: #04B45F;text-align: center">Registro de Diligencias de Juicios</h1>
+
+                    <p:growl id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true"/>
+
+                    <p:fieldset  legend="Datos de la Diligencia" style="width:80%;margin-left: 9%; border-color: #04B45F" id="pg" >
+                        <h5><i>Nota: Las notificaciones serán enviadas serán realizadas a través de correo electrónico en un lapso de 24 horas de haber realizado el registro.</i></h5>
+                        
+                        <h:panelGrid columns="1" id="pgInfGen" style="color: #04B45F;" >
+                            <h:outputLabel value="Número de Juicio: " style="margin-left:5%;"/>
+                            <h:outputLabel value="#{registrarDiligencia.juicio.juNumeroJuicio}" style="color: #424949;margin-left:5%;"/>                            
+
+                            <h:outputLabel value="Notificar: " style="margin-left:5%;"/>
+                            <p:selectOneMenu id="cboNotificar" value="#{registrarDiligencia.funcionarioID}" filter="true" filterMatchMode="startsWith" style="width:87%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
+                                <f:selectItem itemLabel="- Seleccione -" itemValue="" />
+                                <f:selectItems value="#{registrarDiligencia.ltsFuncionarios}" var="funcionarios" itemLabel="#{funcionarios.fuApellidos} #{funcionarios.fuNombres}" itemValue="#{funcionarios.fuCodigo}" />
+                            </p:selectOneMenu>
+                            <p:messages for="cboNotificar"/>
+
+                            <p:outputLabel for="txtdescDilig" value="Descripción Diligencia: " style="margin-left:5%;"/>
+                            <p:inputText id="txtdescDilig" value="#{registrarDiligencia.seguimiento.seDescripcion}" required="false" requiredMessage="Campo requerido" style="width:875px;margin-left:5%;" />
+                            <p:messages for="txtdescDilig"/>
+
+                            <p:outputLabel for="txtFechaDilig" value="Fecha Diligencia: " style="margin-left:5%;"/>
+                            <p:calendar id="txtFechaDilig" locale="es" pattern="dd-MM-yyyy" navigator="true"
+                                        mask="true" required="true" value="#{registrarDiligencia.seguimiento.seFechaDiligencia}" requiredMessage="Campo requerido" style="margin-left:5%;"/>
+                            <p:watermark for="txtFechaDilig" value="dd-mm-aaaa" />
+                            <p:messages for="txtFechaDilig"/>
+                            <br/>
+                        </h:panelGrid>
+                    </p:fieldset>
+                    <br/>
+
+                    <h:panelGrid columns="2" style="margin-left: 35%">
+                        <p:commandButton icon="ui-icon-disk" id="btnGuardar" value="Guardar" action="#{registrarDiligencia.registrarDiligencia()}" actionListener="#{navegar.direccionarInicio()}" update="@form" process="@all">
+                            <p:confirm header="Confirmación" message="Desea registrar la diligencia" icon="ui-icon-alert" />
+                            <!--                                <p:ajax update=":contenido:cboCargo ,:contenido:cboEspecialidad" ></p:ajax>-->
+                        </p:commandButton>
+                        <p:commandButton  icon="fa fa-fw fa-remove" value="Cancelar" update=":contenidoBuscar" process="@this"  actionListener="#{navegar.direccionarConsultaRJ()}" >
+                            <p:confirm header="Confirmación" message="Desea cancelar el registro de la Diligencia" icon="ui-icon-alert" />
+                        </p:commandButton>
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </h:panelGrid>
+
+                </h:form>
+                <!-- Script de estilos para el contenido fel formulario-->
+                <h:outputStylesheet library="css" name="buscar.css" />
+                <!-- Script para usar el calendario en español-->
+                <h:outputScript library="js" name="spanishLocale.js" />
+                <h:outputScript library="js" name="limpiar.js" />
+                <!-- Script de estilos para el contenido fel formulario-->
+                <h:outputStylesheet library="css" name="estudios.css" />
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

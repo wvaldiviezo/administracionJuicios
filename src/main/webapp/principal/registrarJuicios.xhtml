@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="./../WEB-INF/plantillas/plantillaInicial.xhtml">
+
+            <ui:define name="content">
+
+                <h:form id="contenidoBuscar">
+                    <h1 style="color: #04B45F;text-align: center">Registro de Juicios</h1>
+
+                    <p:growl id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true"/>
+
+                    <p:fieldset  legend="Información General" style="width:80%; margin-left: 9%; border-color: #04B45F" id="pg" >                        <h:panelGrid columns="1" id="pgInfGen" style="color: #04B45F;" >
+
+                            <h:outputLabel value="Tipo de Juicio: " style="margin-left:5%;"/>
+                            <p:selectOneMenu id="cboTipoAcc" value="#{juicioRegistrar.tipoAccionID}" filterMatchMode="startsWith" style="width:87%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
+                                <f:selectItem itemLabel="- Seleccione -" itemValue="" />
+                                <f:selectItems value="#{juicioRegistrar.ltsTipoAcciones}" var="tiposAcciones" itemLabel="#{tiposAcciones.taDescripcion}" itemValue="#{tiposAcciones.taCodigo}" />
+                            </p:selectOneMenu>
+                            <p:messages for="cboTipoAcc"/>
+
+                            <p:outputLabel for="txtNumJui" value="Número de Juicio: " style="margin-left:5%;"/>
+                            <p:inputText id="txtNumJui" value="#{juicioRegistrar.juicio.juNumeroJuicio}" required="true" requiredMessage="Campo requerido" style="text-transform:uppercase; width:90%;margin-left:5%;" />
+                            <p:messages for="txtNumJui"/>
+
+                            <h:outputLabel for="txtFechaIni" value="Fecha de Inicio: " style="margin-left:5%;"/>
+                            <p:calendar id="txtFechaIni" locale="es" pattern="dd-MM-yyyy" navigator="true"
+                                        mask="true" required="true" value="#{juicioRegistrar.juicio.juFechaInicio}" requiredMessage="Campo requerido" style="width:90%;margin-left:5%;"/>
+                            <p:watermark for="txtFechaIni" value="dd-mm-aaaa" />
+                            <p:messages for="txtFechaIni"/>
+
+                            <h:outputLabel value="Zonal: " style="margin-left:5%;"/>
+                            <p:selectOneMenu id="cboZonal" value="#{llenadoCombos.zonalID}" filterMatchMode="startsWith" style="width:87%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
+                                <f:selectItem itemLabel="- Seleccione -" itemValue="" />
+                                <f:selectItems value="#{llenadoCombos.ltsZonales}" var="zonales" itemLabel="#{zonales.zoDescripcion}" itemValue="#{zonales.zoCodigo}"  />
+                                <p:ajax update="cboOficina" onstart="" />
+                            </p:selectOneMenu>
+                            <p:messages for="cboZonal"/>
+
+                            <h:outputLabel value="Oficina: " style="margin-left:5%;"/>
+                            <p:selectOneMenu id="cboOficina" value="#{juicioRegistrar.oficinaID}" filter="true" filterMatchMode="startsWith" style="width:87%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
+                                <f:selectItem itemLabel="- Seleccione -" itemValue="" />
+                                <f:selectItems value="#{llenadoCombos.ltsOficinas}" var="oficinas" itemLabel="#{oficinas.ofDescripcion}" itemValue="#{oficinas.ofCodigo}" />
+                            </p:selectOneMenu>
+                            <p:messages for="cboOficina"/>
+
+                            <h:outputLabel value="Unidad Judicial: " style="margin-left:5%;"/>
+                            <p:inputText id="txtUnidadJudicial" value="#{juicioRegistrar.juicio.juUnidadJudicial}" required="true" requiredMessage="Campo requerido" style="width:90%;margin-left:5%;" />
+                            <p:messages for="txtUnidadJudicial"/>
+
+                            <p:outputLabel for="txtAccionante" value="Accionante: " style="margin-left:5%;"/>
+                            <p:inputText id="txtAccionante" value="#{juicioRegistrar.juicio.juOcacionante}" required="true" requiredMessage="Campo requerido" style="width:90%;margin-left:5%;"/>
+                            <p:messages for="txtAccionante"/>
+
+                            <p:outputLabel for="txtAccionado" value="Accionado: " style="margin-left:5%;"/>
+                            <p:inputText id="txtAccionado" value="#{juicioRegistrar.juicio.juOcacionado}" required="true" requiredMessage="Campo requerido" style="width:90%;margin-left:5%;" />
+                            <p:messages for="txtAccionado"/>
+
+                            <p:outputLabel for="txtMotAccion" value="Motivo de la Acción: " style="margin-left:5%;"/>
+                            <p:inputText id="txtMotAccion" value="#{juicioRegistrar.juicio.juMotivoAccion}" required="true" requiredMessage="Campo requerido" style="width:90%;margin-left:5%;" />
+                            <p:messages for="txtMotAccion"/>
+
+                            <p:outputLabel for="txtCuantia" value="Cuantía: " style="margin-left:5%;"/>
+                            <p:inputText id="txtCuantia" value="#{juicioRegistrar.juicio.juCuantia}" required="true" requiredMessage="Campo requerido" style="width:875px;margin-left:5%;" />
+                            <p:messages for="txtCuantia"/>
+
+                            <h:outputLabel value="Nivel Riesgo: " style="margin-left:5%;"/>
+                            <p:selectOneMenu id="cboNRiesgo" value="#{juicioRegistrar.nivelRiesgoID}" filter="true" filterMatchMode="startsWith" style="width:87%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
+                                <f:selectItem itemLabel="- Seleccione -" itemValue="" />
+                                <f:selectItems value="#{juicioRegistrar.ltsNivelRiesgos}" var="riesgos" itemLabel="#{riesgos.nrDescripcion}" itemValue="#{riesgos.nrCodigo}" />
+                            </p:selectOneMenu>
+                            <p:messages for="cboNRiesgo"/>
+                        </h:panelGrid>
+                    </p:fieldset>
+                    <br></br>
+                    <p:fieldset  legend="Informativo" style="width:80%;margin-left: 9%; border-color: #04B45F;" id="pg3" >
+                        <h:outputLink target="_blank" style="color: green; margin-left: 4%;" value="http://consultas.funcionjudicial.gob.ec/informacionjudicial/public/informacion.jsf" > <i>Link del Sistema eSATJE - Consulta de Procesos</i> </h:outputLink>
+                    </p:fieldset>
+                    <br/>
+
+                    <h:panelGrid columns="2" style="margin-left: 35%">
+                        <p:commandButton icon="ui-icon-disk" id="btnGuardar" value="Guardar" action="#{juicioRegistrar.registrarJuicio()}" actionListener="#{navegar.direccionarConsultaRJ()}" update=":contenidoBuscar, :contenidoBuscar:pgInfGen ">
+                            <p:confirm header="Confirmación" message="Desea registrar el juicio" icon="ui-icon-alert" />
+                            <!--                                <p:ajax update=":contenido:cboCargo ,:contenido:cboEspecialidad" ></p:ajax>-->
+                        </p:commandButton>
+                        <p:commandButton  icon="fa fa-fw fa-remove" value="Cancelar" update=":contenidoBuscar, :contenidoBuscar:cboZonal" process="@this"  actionListener="#{navegar.direccionarConsultaRJ()}" >
+                            <p:confirm header="Confirmación" message="Desea cancelar el registro del juicio." icon="ui-icon-alert" />
+                        </p:commandButton>
+                        <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                            <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                            <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                        </p:confirmDialog>
+                    </h:panelGrid>
+                </h:form>
+                <!-- Script de estilos para el contenido fel formulario-->
+                <h:outputStylesheet library="css" name="buscar.css" />
+                <!-- Script para usar el calendario en español-->
+                <h:outputScript library="js" name="spanishLocale.js" />
+                <h:outputScript library="js" name="limpiar.js" />
+                <!-- Script de estilos para el contenido fel formulario-->
+                <h:outputStylesheet library="css" name="estudios.css" />
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

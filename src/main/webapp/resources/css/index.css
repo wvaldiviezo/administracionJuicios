@@ -1,0 +1,31 @@
+/*Determinación del div del index.xhtml*/
+#principal {
+    width: 960px;
+    height: 540px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right:auto;
+    border: 1px solid #04B45F;
+    border-radius: 25px;
+}
+
+#cuadrado {
+    margin-left: 120px;
+    margin-right: 100px;
+    margin-top: 50px;
+/*color: #045491;*/
+    
+    
+}
+
+
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfieldP{
+    width: 250px;
+    background: #ffffff;
+    -moz-box-shadow: inset 0 2px 2px #8f8f8f;
+    -webkit-box-shadow: inset 0 2px 2px #8f8f8f;
+    box-shadow: inset 0 2px 2px #8f8f8f;
+    color: #026890;
+
+}
+

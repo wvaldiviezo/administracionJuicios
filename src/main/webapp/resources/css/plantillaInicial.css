@@ -1,0 +1,43 @@
+body{
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+}
+#top {
+    top:0;
+    background: white;
+/*    position:fixed;*/
+    margin-left: 5.3%;
+    margin-right:5.3%;
+    heigth: 50px;
+    margin-top: 0px;
+    margin-bottom: opx;
+  
+    /*    border: 1px solid #87CEFA;*/
+}
+
+#middle {
+    
+    width: 1200px;
+    heigth: 100px;
+    /*    margin-top: 1px;*/
+    margin-left: 22%;
+    margin-right:5.2%;
+    margin-top: 12%;
+    margin-bottom: 12%;
+
+    /* border: 1px solid #87CEFA;*/
+}
+
+#bottom {
+    /*    margin-top: 3px;*/
+    text-align: center;
+
+    width: 1200px;
+    height: 10px;
+    margin-top: 0px;
+    margin-left: 5.6%;
+    margin-right:5.2%;
+/*    background-image: url('../resources/images/bannerPie_1.png');*/
+/*    border: 1px solid #87CEFA;*/
+}

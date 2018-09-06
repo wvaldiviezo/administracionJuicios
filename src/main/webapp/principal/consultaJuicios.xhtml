@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <ui:composition template="./../WEB-INF/plantillas/plantillaInicial.xhtml">
+
+            <ui:define name="content">
+
+                <h:form id="contenidoBuscar">
+
+                    <h1 style="color: #04B45F;text-align: center">Consulta de Juicios</h1>
+
+                    <p:commandButton icon="fa fa-plus" value="Nuevo" actionListener="#{navegar.direccionarNuevo()}" oncomplete="limpiar" style="color: #04B45F" /> 
+                    <br/>
+                    <p:dataTable id="busquedaJuicio" value="#{juiciosListar.ltsJuicios}" var="itemEstudio"  widgetVar="empleadoTabla"  rows="15"
+                                 paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="10,15,20"
+                                 paginatorPosition="top" emptyMessage="No hay ningún registro con esa opción">
+
+                        <p:column headerText="No." style="width: 30px; text-align: center" sortBy="#{itemEstudio.juCodigo}">
+                            <h:outputLabel value="#{itemEstudio.juCodigo}" />
+                        </p:column>
+
+                        <p:column filterBy="#{itemEstudio.juNumeroJuicio}" headerText="No. Juicio" filterMatchMode="contains" style="text-align: center">
+                            <h:outputText value="#{itemEstudio.juNumeroJuicio}" style="text-transform:uppercase;" />
+                        </p:column>
+
+                        <p:column filterBy="#{itemEstudio.taCodigo.taDescripcion}" headerText="Tipo Acción" filterMatchMode="contains" style="text-align: center">
+                            <h:outputText value="#{itemEstudio.taCodigo.taDescripcion}" />
+                        </p:column>
+
+                        <p:column filterBy="#{itemEstudio.juEstadoJuicio}" headerText="Estado Juicio" filterMatchMode="contains" style="text-align: center">
+                            <h:outputText value="#{itemEstudio.juEstadoJuicio}" style="text-transform:uppercase;"/>
+
+                        </p:column>
+
+                        <p:column id="botonesAccion" headerText="Opciones" filterMatchMode="accion" style="text-align: center">
+                            <p:commandButton id="ver" icon="fa fa-eye" action="#{juiciosListar.verJuicio()}" style="color: #045491" process="@form" >
+                                <f:setPropertyActionListener target="#{juiciosListar.juActual}" value="#{itemEstudio}" rendered="@form"/>
+                            </p:commandButton>
+                            <p:tooltip id="toolTipFade9" for="ver" value="Ver" trackMouse="true"/>
+                            <t/><t/><t/><t/><t/><t/>
+                            <p:commandButton id="editar" icon="fa fa-edit" action="#{juiciosListar.actualizarJuicio(itemEstudio.juCodigo)}" style="color: #04B45F"/>
+                            <p:tooltip id="toolTipFade8" for="editar" value="Editar" trackMouse="true"/>
+                            <t/><t/><t/><t/><t/><t/>
+                            <p:commandButton id="eliminar" icon="fa fa-trash" action="#{juiciosListar.eliminarJuicio(itemEstudio.juCodigo)}" style="color: #D20005">
+                                <p:confirm header="Confirmación" message="Desea eliminar el registro." icon="ui-icon-alert" />
+                            </p:commandButton>
+                            <p:tooltip id="toolTipFade7" for="eliminar" value="Eliminar" trackMouse="true"/>
+                            <t/><t/><t/><t/><t/><t/>
+                            <p:commandButton id="diligencia" icon="fa fa-envelope-square" action="#{juiciosListar.registrarDiligencia(itemEstudio.juCodigo)}" style="color: #2F4F4F"/>
+                            <p:tooltip id="toolTipFade20" for="diligencia" value="Registrar Diligencia" trackMouse="true"/>
+                            <t/><t/><t/><t/><t/><t/>
+                            <p:commandButton id="detalleDiligencia" icon="fa fa-list-alt" action="#{juiciosListar.verDiligencia(itemEstudio.juCodigo)}" style="color:  #1f618d "/>
+                            <p:tooltip id="toolTipFade21" for="detalleDiligencia" value="Diligencias" trackMouse="true"/>
+
+                            <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                                <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check"/>
+                                <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                            </p:confirmDialog>
+                        </p:column>
+                    </p:dataTable>
+
+                </h:form>
+                <!-- Script de estilos para el contenido fel formulario-->
+                <h:outputStylesheet library="css" name="buscar.css" />
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
