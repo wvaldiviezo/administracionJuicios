@@ -83,7 +83,7 @@ public class RegistrarJuicio implements Serializable {
 
 //            this.unidadJudicial.setUjCodigo(this.UnidadJudicialID);
 //            this.juicio.setUjCodigo(unidadJudicial);
-            juicio.setJuEstadoJuicio("activo");
+            juicio.setJuEstadoJuicio("ACTIVO");
             JPAFactoryDao.getFactory().getJuicioDao().create(juicio);
 
             //Envío de  correo

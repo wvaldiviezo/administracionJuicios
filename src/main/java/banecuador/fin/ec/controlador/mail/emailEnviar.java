@@ -30,7 +30,7 @@ public class emailEnviar {
     //private final int puertoSMTP = 25;
     private final int puertoSMTP = 587;
     private String cuentaEnvio = "wilmer.valdiviezo@banecuador.fin.ec";
-    private String contrasenia = "Wil23Val86";
+    private String contrasenia = "Val2018W";
     private String para;
     private String asunto;
     private String contenidoMensaje;

@@ -26,7 +26,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio1() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 1";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -43,7 +43,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio2() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 1";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -60,7 +60,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio3() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 1";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -77,7 +77,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio4() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 1";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -94,7 +94,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio5() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 1";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -112,7 +112,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio11() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 2";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -129,7 +129,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio21() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 2";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -146,7 +146,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio31() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 2";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -163,7 +163,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio41() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 2";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -180,7 +180,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio51() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 2";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -198,7 +198,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio12() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 3";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -215,7 +215,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio22() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 3";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -232,7 +232,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio32() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 3";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -249,7 +249,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio42() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 3";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -266,7 +266,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio52() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 3";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -284,7 +284,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio13() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 4";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -301,7 +301,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio23() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 4";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -318,7 +318,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio33() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 4";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -335,7 +335,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio43() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 4";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -352,7 +352,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio53() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 4";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -370,7 +370,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio14() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 5";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -387,7 +387,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio24() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 5";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -404,7 +404,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio34() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 5";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -421,7 +421,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio44() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 5";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -438,7 +438,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio54() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 5";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -456,7 +456,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio15() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 6";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -473,7 +473,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio25() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo =6";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -490,7 +490,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio35() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 6";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -507,7 +507,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio45() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 6";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -524,7 +524,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> tipoJuicio55() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%activo%'"
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%ACTIVO%'"
                     + "and ta_codigo = 6";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
@@ -541,7 +541,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> total1() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 1 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
             //return tiposJuicios1;
@@ -556,7 +556,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> total2() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 2 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
             //return tiposJuicios1;
@@ -571,7 +571,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> total3() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 3 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
             //return tiposJuicios1;
@@ -586,7 +586,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> total4() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 4 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
             //return tiposJuicios1;
@@ -601,7 +601,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> total5() {
         List tiposJuicios1 = null;
         try {
-            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (nr_codigo) from juicio where nr_codigo = 5 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios1 = query.getResultList();
             //return tiposJuicios1;
@@ -636,7 +636,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiAccCons() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 1 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 1 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -652,7 +652,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiCiviles() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 2 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 2 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -668,7 +668,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiContenciosos() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 3 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 3 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -684,7 +684,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiLaborales() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 4 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 4 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -700,7 +700,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiPenales() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 5 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 5 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -716,7 +716,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuitramEspec() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 6 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ta_codigo) from juicio where ta_codigo = 6 and ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -732,7 +732,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiTotalCB() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_ocacionado) from juicio where ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_ocacionado) from juicio where ju_ocacionado like '%banecuador%' and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -748,7 +748,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiAccConsCC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 1 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 1 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -764,7 +764,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiJuiCivilesCC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 2 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 2 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -780,7 +780,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiJuiContenciososCC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 3 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 3 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -796,7 +796,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiJuiLaboralesCC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 4 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 4 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -812,7 +812,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiJuiPenalesCC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 5 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 5 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -828,7 +828,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiTramEspecialesCC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 6 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ta_codigo = 6 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -844,7 +844,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiTotalJuiciosCC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia not like '%indeterminada%' and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -862,7 +862,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiAccConsSC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 1 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 1 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -878,7 +878,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiJuiCivilesSC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 2 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 2 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -894,7 +894,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiJuiContenciososSC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 3 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 3 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -910,7 +910,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiJuiLaboralesSC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 4 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 4 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -926,7 +926,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiJuiPenalesSC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 5 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 5 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -942,7 +942,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiTramEspecialesSC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 6 and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ta_codigo = 6 and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;
@@ -958,7 +958,7 @@ public class JPAJuicioDao extends JPAGenericDao<Juicio, Integer> implements Juic
     public List<Juicio> InJuiTotalJuiciosSC() {
         List tiposJuicios = null;
         try {
-            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ju_estado_juicio like '%activo%'";
+            String consulta = "select count (ju_cuantia) from juicio where ju_cuantia like '%indeterminada%' and ju_estado_juicio like '%ACTIVO%'";
             Query query = em.createNativeQuery(consulta);
             tiposJuicios = query.getResultList();
             //return tiposJuicios1;

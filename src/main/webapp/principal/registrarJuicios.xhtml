@@ -16,7 +16,8 @@
 
                     <p:growl id="mensaje" autoUpdate="false" severity="info, fatal" showSummary="true" showDetail="true"/>
 
-                    <p:fieldset  legend="Información General" style="width:80%; margin-left: 9%; border-color: #04B45F" id="pg" >                        <h:panelGrid columns="1" id="pgInfGen" style="color: #04B45F;" >
+                    <p:fieldset  legend="Información General" style="width:80%; margin-left: 9%; border-color: #04B45F" id="pg" >                        
+                        <h:panelGrid columns="1" id="pgInfGen" style="color: #04B45F;" >
 
                             <h:outputLabel value="Tipo de Juicio: " style="margin-left:5%;"/>
                             <p:selectOneMenu id="cboTipoAcc" value="#{juicioRegistrar.tipoAccionID}" filterMatchMode="startsWith" style="width:87%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
@@ -51,23 +52,23 @@
                             <p:messages for="cboOficina"/>
 
                             <h:outputLabel value="Unidad Judicial: " style="margin-left:5%;"/>
-                            <p:inputText id="txtUnidadJudicial" value="#{juicioRegistrar.juicio.juUnidadJudicial}" required="true" requiredMessage="Campo requerido" style="width:90%;margin-left:5%;" />
+                            <p:inputText id="txtUnidadJudicial" value="#{juicioRegistrar.juicio.juUnidadJudicial}" required="true" requiredMessage="Campo requerido" style="text-transform:uppercase;width:90%;margin-left:5%;" />
                             <p:messages for="txtUnidadJudicial"/>
 
                             <p:outputLabel for="txtAccionante" value="Accionante: " style="margin-left:5%;"/>
-                            <p:inputText id="txtAccionante" value="#{juicioRegistrar.juicio.juOcacionante}" required="true" requiredMessage="Campo requerido" style="width:90%;margin-left:5%;"/>
+                            <p:inputText id="txtAccionante" value="#{juicioRegistrar.juicio.juOcacionante}" required="true" requiredMessage="Campo requerido" style="text-transform:uppercase;width:90%;margin-left:5%;"/>
                             <p:messages for="txtAccionante"/>
 
                             <p:outputLabel for="txtAccionado" value="Accionado: " style="margin-left:5%;"/>
-                            <p:inputText id="txtAccionado" value="#{juicioRegistrar.juicio.juOcacionado}" required="true" requiredMessage="Campo requerido" style="width:90%;margin-left:5%;" />
+                            <p:inputText id="txtAccionado" value="#{juicioRegistrar.juicio.juOcacionado}" required="true" requiredMessage="Campo requerido" style="text-transform:uppercase;width:90%;margin-left:5%;" />
                             <p:messages for="txtAccionado"/>
 
                             <p:outputLabel for="txtMotAccion" value="Motivo de la Acción: " style="margin-left:5%;"/>
-                            <p:inputText id="txtMotAccion" value="#{juicioRegistrar.juicio.juMotivoAccion}" required="true" requiredMessage="Campo requerido" style="width:90%;margin-left:5%;" />
+                            <p:inputText id="txtMotAccion" value="#{juicioRegistrar.juicio.juMotivoAccion}" required="true" requiredMessage="Campo requerido" style="text-transform:uppercase;width:90%;margin-left:5%;" />
                             <p:messages for="txtMotAccion"/>
 
                             <p:outputLabel for="txtCuantia" value="Cuantía: " style="margin-left:5%;"/>
-                            <p:inputText id="txtCuantia" value="#{juicioRegistrar.juicio.juCuantia}" required="true" requiredMessage="Campo requerido" style="width:875px;margin-left:5%;" />
+                            <p:inputText id="txtCuantia" value="#{juicioRegistrar.juicio.juCuantia}" required="true" requiredMessage="Campo requerido" style="text-transform:uppercase; width:875px;margin-left:5%;" />
                             <p:messages for="txtCuantia"/>
 
                             <h:outputLabel value="Nivel Riesgo: " style="margin-left:5%;"/>

@@ -28,11 +28,11 @@
                             <p:messages for="cboTipoAcc"/>                            
 
                             <p:outputLabel value="Número de Juicio: " style="margin-left:5%;"/>
-                            <p:inputText id="txtNumJui" value="#{actualizarJuicio.juicioAct.juNumeroJuicio}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Campo requerido"/>
+                            <p:inputText id="txtNumJui" value="#{actualizarJuicio.juicioAct.juNumeroJuicio}" style="text-transform:uppercase;color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Campo requerido"/>
                             <p:messages for="txtNumJui"/>                         
                             
                             <h:outputLabel value="Fecha de Inicio: " style="margin-left:5%;"/>
-                            <p:inputText id="txtFechaIni" value="#{actualizarJuicio.juicioAct.juFechaInicio}" style="color: #424949;text-transform:uppercase; width:90%;margin-left:5%;" required="true" requiredMessage="Campo requerido">
+                            <p:inputText id="txtFechaIni" value="#{actualizarJuicio.juicioAct.juFechaInicio}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Campo requerido">
                                 <f:convertDateTime pattern="dd-MM-yyyy"/>
                             </p:inputText>  
                             <p:messages for="txtFechaIni"/>
@@ -53,23 +53,23 @@
                             <p:messages for="cboOficina"/>
 
                             <h:outputLabel value="Unidad Judicial: " style="margin-left:5%;"/>
-                            <p:inputText id="txtUnidadJudicial" value="#{actualizarJuicio.juicioAct.juUnidadJudicial}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:inputText id="txtUnidadJudicial" value="#{actualizarJuicio.juicioAct.juUnidadJudicial}" style="text-transform:uppercase;color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
                             <p:messages for="txtUnidadJudicial"/>
                             
                             <p:outputLabel value="Accionante: " style="margin-left:5%;"/>
-                            <p:inputText id="txtAccionante" value="#{actualizarJuicio.juicioAct.juOcacionante}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:inputText id="txtAccionante" value="#{actualizarJuicio.juicioAct.juOcacionante}" style="text-transform:uppercase;color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
                             <p:messages for="txtAccionante"/>
                             
                             <p:outputLabel value="Accionado: " style="margin-left:5%;"/>
-                            <p:inputText id="txtAccionado" value="#{actualizarJuicio.juicioAct.juOcacionado}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:inputText id="txtAccionado" value="#{actualizarJuicio.juicioAct.juOcacionado}" style="text-transform:uppercase;color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
                             <p:messages for="txtAccionado"/>
                             
                             <p:outputLabel value="Motivo de la Acción: " style="margin-left:5%;"/>
-                            <p:inputText id="txtMotAccion" value="#{actualizarJuicio.juicioAct.juMotivoAccion}" style="color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:inputText id="txtMotAccion" value="#{actualizarJuicio.juicioAct.juMotivoAccion}" style="text-transform:uppercase;color: #424949; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
                             <p:messages for="txtMotAccion"/>
                             
                             <p:outputLabel value="Cuantía: " style="margin-left:5%;"/>
-                            <p:inputText id="txtCuantia" value="#{actualizarJuicio.juicioAct.juCuantia}" style="color: #424949; width:875px;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:inputText id="txtCuantia" value="#{actualizarJuicio.juicioAct.juCuantia}" style="text-transform:uppercase;color: #424949; width:875px;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
                             <p:messages for="txtCuantia"/>
                             
                             <h:outputLabel value="Nivel Riesgo: " style="margin-left:5%;"/>
@@ -79,7 +79,7 @@
                             <p:messages for="cboNRiesgo"/>
 
                             <p:outputLabel value="Estado: " style="margin-left:5%;"/>
-                            <p:inputText id="estado" value="#{actualizarJuicio.juicioAct.juEstadoJuicio}" style="color: #424949;text-transform:uppercase; width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
+                            <p:inputText id="estado" value="#{actualizarJuicio.juicioAct.juEstadoJuicio}" style="text-transform:uppercase;color: #424949;width:90%;margin-left:5%;" required="true" requiredMessage="Selección requerida"/>
                             <p:messages for="estado"/>
                             <br/>
 

@@ -22,7 +22,7 @@
                         
                         <h:panelGrid columns="1" id="pgInfGen" style="color: #04B45F;" >
                             <h:outputLabel value="Número de Juicio: " style="margin-left:5%;"/>
-                            <h:outputLabel value="#{registrarDiligencia.juicio.juNumeroJuicio}" style="color: #424949;margin-left:5%;"/>                            
+                            <h:outputLabel value="#{registrarDiligencia.juicio.juNumeroJuicio}" style="text-transform:uppercase;color: #424949;margin-left:5%;"/>                            
 
                             <h:outputLabel value="Notificar: " style="margin-left:5%;"/>
                             <p:selectOneMenu id="cboNotificar" value="#{registrarDiligencia.funcionarioID}" filter="true" filterMatchMode="startsWith" style="width:87%;margin-left:5%;" required="true" requiredMessage="Selección requerida">
@@ -32,7 +32,7 @@
                             <p:messages for="cboNotificar"/>
 
                             <p:outputLabel for="txtdescDilig" value="Descripción Diligencia: " style="margin-left:5%;"/>
-                            <p:inputText id="txtdescDilig" value="#{registrarDiligencia.seguimiento.seDescripcion}" required="false" requiredMessage="Campo requerido" style="width:875px;margin-left:5%;" />
+                            <p:inputText id="txtdescDilig" value="#{registrarDiligencia.seguimiento.seDescripcion}" required="false" requiredMessage="Campo requerido" style="text-transform:uppercase;width:875px;margin-left:5%;" />
                             <p:messages for="txtdescDilig"/>
 
                             <p:outputLabel for="txtFechaDilig" value="Fecha Diligencia: " style="margin-left:5%;"/>
@@ -46,7 +46,7 @@
                     <br/>
 
                     <h:panelGrid columns="2" style="margin-left: 35%">
-                        <p:commandButton icon="ui-icon-disk" id="btnGuardar" value="Guardar" action="#{registrarDiligencia.registrarDiligencia()}" actionListener="#{navegar.direccionarInicio()}" update="@form" process="@all">
+                        <p:commandButton icon="ui-icon-disk" id="btnGuardar" value="Guardar" action="#{registrarDiligencia.registrarDiligencia()}" actionListener="#{navegar.direccionarConsultaRJ()}" update="@form" process="@all">
                             <p:confirm header="Confirmación" message="Desea registrar la diligencia" icon="ui-icon-alert" />
                             <!--                                <p:ajax update=":contenido:cboCargo ,:contenido:cboEspecialidad" ></p:ajax>-->
                         </p:commandButton>
