@@ -19,24 +19,21 @@
 
                     <p:fieldset  legend="Información General" style="width:80%;margin-left: 100px; border-color: #04B45F" id="pg" >
                         <h:panelGrid columns="2" id="pgInfGen" style="color: #04B45F;" >
-                            <h:outputLabel value="Número de Juicio: " />
-                            <p:outputLabel value="#{verDiligencia.juicioDiligencia.juNumeroJuicio}" style="color: #424949;"/>
                         </h:panelGrid>
                         <br/>
-                        <p:dataTable id="busquedaJuicio" value="#{verDiligencia.ltsDiligencias}" var="itemEstudio"  widgetVar="empleadoTabla" rows="15"
+                        <p:dataTable id="busquedaJuicio" value="#{verDiligencia.ltsSeguimientos}" var="itemEstudio"  widgetVar="empleadoTabla" rows="15"
                                      paginator="true" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}" rowsPerPageTemplate="10,15,20"
                                      paginatorPosition="top" emptyMessage="No hay ningún registro con esa opción">
-<!--                            <p:column headerText="No." style="width: 30px; text-align: center" >
-                                <h:outputLabel value="#{itemEstudio.get(0)}" />
-                            </p:column>-->
                             <p:column headerText="Descripción Diligencia" style="width: 30px; text-align: center;text-transform:uppercase;" >
-                                <h:outputLabel value="#{itemEstudio.get(1)}" />
+                                <h:outputLabel value="#{itemEstudio.seDescripcion}" />
                             </p:column>
                             <p:column headerText="Fecha Diligencia" style="width: 30px; text-align: center" >
-                                <h:outputLabel value="#{itemEstudio.get(2)}"/>
+                                <h:outputLabel value="#{itemEstudio.seFechaDiligencia}">
+                                    <f:convertDateTime pattern="dd-MM-yyyy"/>
+                                </h:outputLabel>
                             </p:column>
                             <p:column headerText="Funcionario Responsable" style="width: 30px; text-align: center;" >
-                                <h:outputLabel value="#{itemEstudio.get(3)}" />
+                                <h:outputLabel value="#{itemEstudio.fuCodigo.fuNombres}" />
                             </p:column>
                         </p:dataTable>
                     </p:fieldset>

@@ -25,6 +25,7 @@ public class VerDiligencia implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Juicio juicioDiligencia;
+    private Juicio numJuicio;
     private List<Juicio> ltsDilegenciasPorJuicio;
     
     private ArrayList ltsDiligencias;
@@ -58,9 +59,10 @@ public class VerDiligencia implements Serializable {
     }
 
     public void setJuicioDiligencia(Juicio juicioDiligencia) {  
-        this.juicioDiligencia = juicioDiligencia;
-        this.ltsSeguimientos = JPAFactoryDao.getFactory().getSeguimientoDao().find();
-        this.ltsDiligencias = JPAFactoryDao.getFactory().getSeguimientoDao().listaDiligencias(ltsSeguimientos,this.juicioDiligencia.getJuCodigo());
+        //this.juicioDiligencia = juicioDiligencia;
+        //this.ltsSeguimientos = JPAFactoryDao.getFactory().getSeguimientoDao().find();
+        //this.ltsDiligencias = JPAFactoryDao.getFactory().getSeguimientoDao().listaDiligencias(ltsSeguimientos,this.juicioDiligencia.getJuCodigo());
+        this.ltsSeguimientos = JPAFactoryDao.getFactory().getSeguimientoDao().seguimientos(juicioDiligencia);
     }
 
     public Seguimiento getSeguimiento() {
@@ -72,6 +74,7 @@ public class VerDiligencia implements Serializable {
     }
 
     public List<Seguimiento> getLtsSeguimientos() {
+        //this.ltsSeguimientos = JPAFactoryDao.getFactory().getSeguimientoDao().seguimientos(juicioDiligencia);
         return ltsSeguimientos;
     }
 
@@ -87,6 +90,14 @@ public class VerDiligencia implements Serializable {
 
     public void setLtsDilegenciasPorJuicio(List<Juicio> ltsDilegenciasPorJuicio) {
         this.ltsDilegenciasPorJuicio = ltsDilegenciasPorJuicio;
+    }
+
+    public Juicio getNumJuicio() {
+        return numJuicio;
+    }
+
+    public void setNumJuicio(Juicio numJuicio) {
+        this.numJuicio = numJuicio;
     }
     
     

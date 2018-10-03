@@ -84,9 +84,9 @@ public class JuiciosListar implements Serializable {
     }
     
     //mètodo para ver las Diligencias de un Juicio
-    public String verDiligencia (int juCodigo) {
-        Juicio ju = (Juicio) JPAFactoryDao.getFactory().getJuicioDao().read(Integer.valueOf(juCodigo));
-        getCtrVerDiligencia().setJuicioDiligencia(ju);
+    public String verDiligencia () {
+        //Juicio ju = (Juicio) JPAFactoryDao.getFactory().getJuicioDao().read(Integer.valueOf(juCodigo));
+        getCtrVerDiligencia().setJuicioDiligencia(juActual);
         return "verDiligencia.banecuador";
     }
 

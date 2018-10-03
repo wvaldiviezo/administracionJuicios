@@ -89,16 +89,18 @@ public class JPASeguimientoDao extends JPAGenericDao<Seguimiento, Integer> imple
     public List<Seguimiento> seguimientos(Juicio juicio) {
         int codJuicio = juicio.getJuCodigo();
         List<Seguimiento> seguimientos = null;
-
+        System.out.print("entra consulta metodo");
         try {
             String consulta = "SELECT * FROM \n"
                     + "  juicio j, \n"
                     + "  seguimiento s\n"
                     + "WHERE \n"
                     + "  s.ju_codigo = j.ju_codigo and \n"
-                    + "  s.ju_codigo  =1";
+                    + "  s.ju_codigo  ="+juicio.getJuCodigo();
             Query query = em.createNativeQuery(consulta, Seguimiento.class);
             seguimientos = query.getResultList();
+            
+            System.out.println("Impresion:"+seguimientos.toString());
 
         } catch (Exception e) {
             System.out.println("error en la consulta SQL en marcadore estudio historquimica por Estudio");

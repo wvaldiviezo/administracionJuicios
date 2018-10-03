@@ -55,7 +55,9 @@
                             <p:commandButton id="diligencia" icon="fa fa-envelope-square" action="#{juiciosListar.registrarDiligencia(itemEstudio.juCodigo)}" style="color: #2F4F4F"/>
                             <p:tooltip id="toolTipFade20" for="diligencia" value="Registrar Diligencia" trackMouse="true"/>
                             <t/><t/><t/><t/><t/><t/>
-                            <p:commandButton id="detalleDiligencia" icon="fa fa-list-alt" action="#{juiciosListar.verDiligencia(itemEstudio.juCodigo)}" style="color:  #1f618d "/>
+                            <p:commandButton id="detalleDiligencia" icon="fa fa-list-alt" action="#{juiciosListar.verDiligencia()}" style="color:  #1f618d " process="@form">
+                                <f:setPropertyActionListener target="#{juiciosListar.juActual}" value="#{itemEstudio}" rendered="@form" />
+                            </p:commandButton>
                             <p:tooltip id="toolTipFade21" for="detalleDiligencia" value="Diligencias" trackMouse="true"/>
 
                             <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">

@@ -143,6 +143,14 @@
             <artifactId>poi</artifactId>
             <version>3.2-FINAL</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.glassfish.main.resources/javamail -->
+        <dependency>
+            <groupId>org.glassfish.main.resources</groupId>
+            <artifactId>javamail</artifactId>
+            <version>4.1.1</version>
+            <type>pom</type>
+        </dependency>
+
     </dependencies>
 
     <build>
