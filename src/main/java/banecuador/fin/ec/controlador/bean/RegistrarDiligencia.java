@@ -5,19 +5,21 @@
  */
 package banecuador.fin.ec.controlador.bean;
 
-import banecuador.fin.ec.controlador.mail.emailEnviar;
+import banecuador.fin.ec.controlador.mail.ConstantesEmail;
+import banecuador.fin.ec.controlador.mail.EmailService;
 import banecuador.fin.ec.modelo.entidad.Funcionario;
 import banecuador.fin.ec.modelo.entidad.Juicio;
 import banecuador.fin.ec.modelo.entidad.Seguimiento;
 import banecuador.fin.ec.modelo.jpa.JPAFactoryDao;
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
 
 /**
  *
@@ -42,6 +44,9 @@ public class RegistrarDiligencia implements Serializable {
     private int numJuicioID;
     private int funcionarioID;
 
+    @EJB
+    private transient EmailService emailService;
+    
     public RegistrarDiligencia() {
         ltsJuicios = null;
         ltsSeguimientos = null;
@@ -60,6 +65,9 @@ public class RegistrarDiligencia implements Serializable {
             //this.juicio.setJuCodigo(numJuicioID);
             this.seguimiento.setJuCodigo(juicio);
             this.funcionario.setFuCodigo(funcionarioID);
+            
+            this.funcionario = JPAFactoryDao.getFactory().getFuncionarioDao().read(funcionarioID);
+            
             this.seguimiento.setFuCodigo(funcionario);
             
             JPAFactoryDao.getFactory().getSeguimientoDao().create(seguimiento);
@@ -68,13 +76,27 @@ public class RegistrarDiligencia implements Serializable {
             
             
             //envío de correo electrónico
-            emailEnviar mail = new emailEnviar();
-            mail.setPara(this.seguimiento.getFuCodigo().getFuCorreo());
-            mail.setAsunto("Notificación de la Diligencia: ");
-            mail.setContenidoMensaje("Estimado(a),\nNotificación del Juicio : " +this.juicio.getJuNumeroJuicio()+ "\n" 
-                    + "Descripción de la citación:" + this.seguimiento.getSeDescripcion() + "\n" 
-                    + "Fecha de la diligencia: " + this.seguimiento.getSeFechaDiligencia());
-            mail.enviarCorreo();
+            Map<String, Object> mapCorreo = new HashMap<String, Object>();
+            String fuCorreo = this.seguimiento.getFuCodigo().getFuNombres().concat(" ").concat(this.seguimiento.getFuCodigo().getFuNombres());
+            fuCorreo = fuCorreo.concat(" <").concat(this.seguimiento.getFuCodigo().getFuCorreo()).concat(" >");
+            mapCorreo.put("fu_correo", fuCorreo);
+            mapCorreo.put("num_juicio", this.juicio.getJuNumeroJuicio());
+            mapCorreo.put("desc_juicio", this.seguimiento.getSeDescripcion());
+            mapCorreo.put("fec_diligencia", this.seguimiento.getSeFechaDiligencia());
+            mapCorreo.put("notif_asunto", "Notificación de la Diligencia: ");
+            mapCorreo.put("notif_detalle", "Estimado(a)"+ConstantesEmail.ENTER
+                    +"Usted tiene la siguiente notificación de Seguimiento de Diligencia de Juicios" + ConstantesEmail.ENTER 
+                    +"Número de Juicio : [NUM_JUICIO]" + ConstantesEmail.ENTER 
+                    + "Descripción : [DESCRIP_CITAC]" + ConstantesEmail.ENTER 
+                    + "Fecha de la diligencia: [FECHA_DILIGENCIA] [HORA_DILIGENCIA]"
+                    + ConstantesEmail.ENTER
+                    + ConstantesEmail.ENTER
+            +"<i>*** Este correo no requiere contestación, es generado de forma automática ***<i>");
+                    
+            mapCorreo.put("tipoEmail", EmailService.TipoEmail.NOTIFICACION_JUICIO);
+            
+            emailService.procesar(mapCorreo);
+
              FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Aviso", "Diligencia registrada exitosamente"));
         } catch (Exception e) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Aviso", "Diligencia NO registrada "));
